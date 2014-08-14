@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/drj-io/property-manager",
   "dependencies": {
+    "body-parser": "^1.6.3",
     "ejs": "^1.0.0",
-    "express": "^4.8.3"
+    "express": "^4.8.3",
+    "express-session": "^1.7.5"
   }
 }
