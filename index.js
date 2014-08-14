@@ -28,14 +28,20 @@ users = [
     {
         username: 'joe',
         password: 'qwerty'
+    },
+    {
+        username: 'ben',
+        password: 'asdf'
     }
 ];
+
+containerClass = '';
 
 var properties = [
         {
             address: '504 E Eisenhower Blvd, Loveland, CO 80513',
             phone: '800-541-3278',
-            rating: 5,
+            rating: 5
 
         },
         {
@@ -76,7 +82,10 @@ app.get('/properties/list',function(req,res){
 })
 app.get('/properties/create', function(req,res){
     user = checkUser(req, res);
-    res.render("properties-form", {propertyId: -1})
+    res.render("properties-form", {
+        propertyId: -1,
+        containerClass: 'edit'
+    })
 
 })
 
@@ -97,6 +106,16 @@ app.get('/properties/edit/:id', function(req,res){
 
     res.render("properties-form",{
         propertyId: req.params.id, 
+        property: properties[req.params.id],
+        containerClass: 'edit'
+    })
+});
+
+app.get('/properties/view/:id', function(req,res) {
+    user = checkUser(req,res);
+
+    res.render("properties-view", {
+        propertyId: req.params.id,
         property: properties[req.params.id]
     })
 });

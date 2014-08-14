@@ -6,12 +6,52 @@ body {
     height: 100vh;
 }
 
+.navbar {
+    margin-bottom: 0;
+}
+
 #container {
     display: flex;
     flex: auto;
     height: 100vh;
     flex-flow: column;
     align-items: center;
+    opacity:0;
+    transition: all .75s linear;
+}
+
+.edit {
+    justify-content: center;
+}
+
+.edit form {
+    width: auto;
+}
+
+.edit form .input-group label {
+    width: 120px;
+    padding-right: 1em;
+    text-align: right;
+}
+
+.edit form .input-group input {
+    width: 250px;
+}
+
+.edit form .input-group:last-child {
+    text-align: right;
+}
+
+.edit form .input-group:last-child input {
+    width: auto;
+}
+
+body.loaded #container {
+    opacity: 1;
+}
+
+body.loaded.leaving #container {
+    opacity: 0;
 }
 
 #loginbox {
@@ -60,3 +100,21 @@ table.table {
 }
 
 label { width: 200px;}
+
+.viewHeader {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.viewHeader h1 {
+    margin: 10px 0;
+}
+
+#map-canvas {
+    width: 100%;
+    display: flex;
+    flex: 1;
+}
