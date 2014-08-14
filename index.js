@@ -75,15 +75,27 @@ app.get('/properties/list',function(req,res){
 
 })
 app.get('/properties/create', function(req,res){
+    user = checkUser(req, res);
+    res.render("properties-form", {})
 
 })
 
 
 app.post('/properties/create', function(req,res){
-    
+    user = checkUser(req,res);
+    properties.push({
+         address: req.body.address,
+            phone: req.body.phone,
+            rating: req.body.rating,
+    });
+
+    res.redirect('/properties/list');
 })
 
 
+app.get('/properties/edit:id', function(req,res){
+    console.log(req.params.id)
+})
 
 /*
 
