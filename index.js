@@ -29,10 +29,62 @@ users = [
         username: 'joe',
         password: 'qwerty'
     }
-]
+];
+
+var properties = [
+        {
+            address: '504 E Eisenhower Blvd, Loveland, CO 80513',
+            phone: '800-541-3278',
+            rating: 5,
+
+        },
+        {
+            address: '4616 S Shields St, Fort Collins, CO 80526',
+            phone: '970-226-2500',
+            rating: 5
+        }
+
+
+
+];
+
+
+
+
+
 
 app.set('view engine', 'ejs');
+
 app.use('/', express.static(__dirname + '/public'));
+
+/*
+
+######                                                           
+#     # #####   ####  #####  ###### #####  ##### # ######  ####  
+#     # #    # #    # #    # #      #    #   #   # #      #      
+######  #    # #    # #    # #####  #    #   #   # #####   ####  
+#       #####  #    # #####  #      #####    #   # #           # 
+#       #   #  #    # #      #      #   #    #   # #      #    # 
+#       #    #  ####  #      ###### #    #   #   # ######  ####  
+
+*/
+
+app.get('/properties/list',function(req,res){
+    user = checkUser(req, res);
+    res.render('properties-list',{properties:properties})
+
+})
+app.get('/properties/create', function(req,res){
+
+})
+
+
+app.post('/properties/create', function(req,res){
+    
+})
+
+
+
 /*
 
      #  #####  ####### ######  
