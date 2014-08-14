@@ -76,7 +76,7 @@ app.get('/properties/list',function(req,res){
 })
 app.get('/properties/create', function(req,res){
     user = checkUser(req, res);
-    res.render("properties-form", {})
+    res.render("properties-form", {propertyId: -1})
 
 })
 
@@ -92,9 +92,32 @@ app.post('/properties/create', function(req,res){
     res.redirect('/properties/list');
 })
 
+app.get('/properties/edit/:id', function(req,res){
+    user = checkUser(req,res);
 
-app.get('/properties/edit:id', function(req,res){
-    console.log(req.params.id)
+    res.render("properties-form",{
+        propertyId: req.params.id, 
+        property: properties[req.params.id]
+    })
+});
+
+app.post('/properties/edit/:id', function(req,res){
+    user = checkUser(req,res);
+    properties[req.params.id] = {
+            address: req.body.address,
+            phone: req.body.phone,
+            rating: req.body.rating,
+    }
+
+    res.redirect('/properties/list')
+
+})
+
+
+app.get('/properties/delete/:id', function(req,res){
+    user = checkUser(req,res);
+    properties.splice(req.params.id,1);
+    res.redirect('/properties/list');
 })
 
 /*
