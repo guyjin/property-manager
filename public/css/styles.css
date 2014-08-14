@@ -1,22 +1,62 @@
 
 /* #1 */
-body { 
-    background: ddd;
+body {
+    display: flex;
+    flex-flow: column;
+    height: 100vh;
+}
+
+#container {
+    display: flex;
+    flex: auto;
+    height: 100vh;
+    flex-flow: column;
+    align-items: center;
 }
 
 #loginbox {
-    padding-top: 200px;
+    /*padding-top: 200px;
     width: 500px;
-    margin: auto;
+    margin: auto;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-flow: row;
 }
+
+form {
+    width: 300px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-group {
+    margin-bottom: 0.5em;
+}
+
+.input-group:last-child {
+    width: 100%;
+}
+
 
 .footer {
-    margin-top: 30px;
+    /*margin-top: 30px;*/
+    display: flex;
+    margin-bottom: 0;
+    align-items: center;
+    justify-content: flex-start;
+    flex: auto;
+    font-size: .8em;
 }
 
-table {width: 100%; border: 1px solid;}
-table td { border: 1px solid black;} 
 
-#container { width: 700px; margin: auto;}
+
+table.table {
+    width: auto;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+}
 
 label { width: 200px;}

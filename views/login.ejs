@@ -4,12 +4,10 @@
 <html class="no-js" lang="en" data-useragent="Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)">
 <head>
      <% include partials/head.ejs %>
-
 </head>
 <body>
-
     <div id="loginbox">
-      <form action="/user/login" method="post">
+      <form action="/user/login" method="post" class="well">
         <div class="input-group">
           <span class="input-group-addon">@</span>
           <input type="text" class="form-control" placeholder="Username" name="username">
@@ -19,7 +17,7 @@
           <input type="password" class="form-control" placeholder="Password" name="password">
         </div>
         <div class="input-group">
-          <input type="submit" class="form-control" />
+          <input type="submit" class="form-control btn btn-primary btn-sm btn-block" />
         </div>
       </form>
     </div>
