@@ -35,7 +35,7 @@ users = [
     }
 ];
 
-containerClass = '';
+containerClass = 'none';
 
 var properties = [
         {
@@ -163,7 +163,10 @@ app.get('/', function(req, res){
         user: user,
         message :'hello there '
     }
-    res.render('home',{ data:data });
+    res.render('home',{
+        data:data,
+        containerClass: 'home'
+    });
 })
 
 app.get('/login', function(req, res){
@@ -174,7 +177,7 @@ app.get('/login', function(req, res){
 
 
 app.post('/user/login', function(req, res){
-
+    
     console.log( req.body.username, req.body.password);
 
 

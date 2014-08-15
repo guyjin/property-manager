@@ -10,6 +10,16 @@ body {
     margin-bottom: 0;
 }
 
+.home .navbar {
+    margin-bottom: 0;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.home .navbar a {
+    color: #acacac;
+}
+
 #container {
     display: flex;
     flex: auto;
@@ -20,12 +30,46 @@ body {
     transition: all .75s linear;
 }
 
+.home {
+    background: transparent url('../img/homes.jpg') no-repeat center;
+    background-size: cover;
+}
+
+.home #container {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+
+}
+
+.home .splash {
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    padding: 2em;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.splash .greeting {
+    border-top: 1px solid #fff;
+    padding-top: 1em;
+}
+
+.splash .name {
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+
 .edit {
     justify-content: center;
 }
 
 .edit form {
     width: auto;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
 }
 
 .edit form .input-group label {
@@ -53,6 +97,8 @@ body.loaded #container {
 body.loaded.leaving #container {
     opacity: 0;
 }
+
+
 
 #loginbox {
     /*padding-top: 200px;
@@ -90,6 +136,12 @@ form {
     justify-content: flex-start;
     flex: auto;
     font-size: .8em;
+}
+
+.home .footer {
+    background-color: transparent;
+    border: 0;
+    color: #fff;
 }
 
 

@@ -1,6 +1,3 @@
-/**
- * Created by B.Vaughn on 8/14/2014.
- */
 var geocoder;
 var map;
 function initialize() {
@@ -16,7 +13,6 @@ function initialize() {
 
 function codeAddress() {
     var address = document.getElementById('straddr').innerHTML;
-    console.log(address);
     geocoder.geocode( { 'address': address}, function(results, status) {
     if (status == google.maps.GeocoderStatus.OK) {
     map.setCenter(results[0].geometry.location);
